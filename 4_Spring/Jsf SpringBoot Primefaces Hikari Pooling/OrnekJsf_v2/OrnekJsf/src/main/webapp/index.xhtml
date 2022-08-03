@@ -1,0 +1,42 @@
+<f:view xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>TO-DO application</title>
+	</h:head>
+	<h:body>
+		<h:form id="personelform" >
+			<p:messages showDetail="true" autoUpdate="true" closable="true" showIcon="true"  />
+			<p:panelGrid columns="1">
+				<p:outputLabel value="Ad:" />
+				<p:inputText value="#{ndexController.personel.ad}" />
+
+				<p:outputLabel value="Soyad:" />
+				<p:inputText value="#{ndexController.personel.soyad}" />
+
+				<p:outputLabel value="Tc:" />
+				<p:inputText value="#{ndexController.personel.tc}" />
+				<p:commandButton value="Kaydet" update="personelform" action="#{ndexController.kaydet}" />
+			</p:panelGrid>
+
+			<p:dataTable value="#{ndexController.personelListesi}" var="personel">
+				<p:column headerText="ID">
+					<h:outputText value="#{personel.id}" />
+				</p:column>
+				<p:column headerText="AD">
+					<h:outputText value="#{personel.ad}" />
+				</p:column>
+				<p:column headerText="SOYAD">
+					<h:outputText value="#{personel.soyad}" />
+				</p:column>
+			</p:dataTable>
+
+
+
+
+		</h:form>
+	</h:body>
+</f:view>

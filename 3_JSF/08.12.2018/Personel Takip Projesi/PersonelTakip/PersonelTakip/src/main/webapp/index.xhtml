@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+
+	<style>
+body {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	width: 100%;
+	height: 100%;
+	background-color: gray;
+}
+</style>
+	<script type="text/javascript">
+    PrimeFaces.locales['tr'] = {
+        closeText: 'kapat',
+        prevText: 'geri',
+        nextText: 'ileri',
+        currentText: 'bugün',
+        monthNames: ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran',
+            'Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'],
+        monthNamesShort: ['Oca','Şub','Mar','Nis','May','Haz',
+            'Tem','Ağu','Eyl','Eki','Kas','Ara'],
+        dayNames: ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'],
+        dayNamesShort: ['Pz','Pt','Sa','Ça','Pe','Cu','Ct'],
+        dayNamesMin: ['Pz','Pt','Sa','Ça','Pe','Cu','Ct'],
+        weekHeader: 'Hf',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: '',
+        month: 'Ay',
+        week: 'Hafta',
+        day: 'Gün',
+        allDayText : 'Tüm Gün'
+    };
+</script>
+</h:head>
+
+
+
+<h:body>
+
+	<p:outputPanel deferred="true">
+		<p:layout fullPage="true">
+
+			<p:layoutUnit position="north" visible="false" closable="true"
+				resizable="false">Banner</p:layoutUnit>
+			<p:layoutUnit header="Menü" position="west" resizable="false"
+				size="200" minSize="150" maxSize="200">
+
+			</p:layoutUnit>
+			<p:layoutUnit position="center" header="Kullanıcı İşlem Merkezi">
+
+				<h:form id="personel_bilgileri" prependId="false">
+					<p:growl/>
+					<p:panelGrid columns="2" styleClass="ui-noborder">
+						<p:outputLabel for="per_ad" value="Ad:" />
+						<p:inputText id="per_ad" placeholder="Ad girişi yapınız"
+							required="true"
+							requiredMessage="Lütfen Ad Bilgisini Boş Bırakmayınız" />
+
+						<p:outputLabel for="per_soyad" value="Soyad:" />
+						<p:inputText id="per_soyad" placeholder="Soyad girişi yapınız"
+							required="true"
+							requiredMessage="Lütfen Soyad Bilgisini Boş Bırakmayınız" />
+
+						<p:outputLabel for="per_tc" value="TC:" />
+						<p:inputNumber id="per_tc" required="true"
+							requiredMessage="Lütfen Tc Bilgisini Boş Bırakmayınız" />
+
+						<p:outputLabel for="per_dtar" value="D.Tarihi:" />
+						<p:calendar id="per_dtar" showOn="button" locale="tr" required="true" />
+
+						<p:outputLabel value="Birim:" />
+						<p:selectOneMenu filter="true" required="true"
+							requiredMessage="Lütfen Birim Seçiniz !"
+							value="#{personelController.secilenBirim}">
+							
+							<f:selectItems value="#{personelController.birimListesi}"
+								itemLabel="#{birim.birimAdi}" itemValue="#{birim.birimId}"
+								var="birim" />
+
+						</p:selectOneMenu>
+						<p:outputLabel  value="Cinsiyet"  />
+						<p:selectOneRadio value="#{personelController.secilenCinsiyet}" required="true" 
+						requiredMessage="Lütfen cinsiyet seçimi yapınız !"
+						>
+						<f:selectItem  itemLabel="Kadın" itemValue="1" />
+						<f:selectItem  itemLabel="Erkek" itemValue="2" />
+						
+						</p:selectOneRadio>
+						
+						<p:spacer/>
+						<p:commandButton  value="Kaydet"  ajax="true" update="personel_bilgileri" styleClass="float-right" />
+						
+
+					</p:panelGrid>
+
+
+
+
+
+
+
+				</h:form>
+
+			</p:layoutUnit>
+			<p:layoutUnit position="south"></p:layoutUnit>
+
+		</p:layout>
+
+	</p:outputPanel>
+
+</h:body>
+</html>

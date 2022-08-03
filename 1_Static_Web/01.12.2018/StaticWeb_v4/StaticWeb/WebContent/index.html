@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" 
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+
+<style type="text/css">
+span {
+	color: red;
+	display: none;
+}
+</style>
+<script type="text/javascript">
+window.onload = function(){
+	var ad = document.getElementById("ad");
+	var soyad = document.getElementById("soyad");
+	var adUyari = document.getElementById("adUyari");
+	var soyadUyari = document.getElementById("soyadUyari");
+	var kaydetButon = document.getElementById("button-1");
+	kaydetButon.addEventListener("click",
+	function() {		
+		if(ad.value==""){
+			//TODO Uyarı yazısı çıkartır.
+			adUyari.style.display="block";
+		}else{
+			adUyari.style.display="none";	
+		}		
+
+		if(soyad.value==""){
+			//TODO Uyarı yazısı çıkartır.
+			soyadUyari.style.display="block";
+		}else{
+			soyadUyari.style.display="none";	
+		}	
+	}
+	);
+	ad.addEventListener("keypress",function(){ 
+			adUyari.style.display="none";		 
+		});	
+	soyad.addEventListener("keypress",function(){ 
+		soyadUyari.style.display="none";		 
+	});	
+};
+</script>
+</head>
+<body>
+
+	<div  class="container-fluid"  >
+	<div class="row"  >
+	<div class="form-group"  >
+	 <div class="col" >
+		<label for="ad"  >
+			Ad: <input class="form-control"  type="text" id="ad" value="" placeholder="İsim Girin" />
+			<span id="adUyari">Lütfen ad kısmını boş bırakmayınız</span>
+		</label>	
+	</div>		
+	<div  class="col" >
+			<label for="ad" >
+			Soyad: <input class="form-control" type="text" id="soyad" value="" placeholder="Soyad Girin" />
+			<span id="soyadUyari">Lütfen soyad kısmını boş bırakmayınız</span>
+		</label> 
+	</div>
+	<div  class="col" >	
+		<input type="button" class="btn btn-success float-right" value="Kaydet" id="button-1"
+			 />
+	</div>
+			 </div>
+</div>
+	</div>
+</body>
+</html>

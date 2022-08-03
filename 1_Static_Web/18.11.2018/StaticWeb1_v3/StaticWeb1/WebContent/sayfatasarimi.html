@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1" />
+
+<title>Insert title here</title>
+
+<link href="https://fonts.googleapis.com/css?family=Poor+Story"
+	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+	integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+	crossorigin="anonymous"/>
+
+<style type="text/css">
+.renk1 {
+	background-color: #c5d5cb;
+}
+
+.renk2 {
+	background-color: #9fa8a3;
+}
+
+.renk3 {
+	background-color: #e3e0cf;
+}
+
+.renk4 {
+	background-color: #f7f7f7
+}
+
+.yerlesim {
+	float: left;
+}
+
+.break {
+	clear: both;
+}
+
+.solmenu {
+	float: left;
+	height: 100%;
+	width: 20%;
+	min-width: 150px;
+	clear: both;
+}
+
+.icerikAlani {
+	float: left;
+	height: 100%;
+	width: 80%;
+}
+
+.container {
+	overflow: hidden;
+	height: 100%;
+	display: flex;
+}
+
+.header_alani {
+	width: 100%;
+	height: 150px;
+	clear: both;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	height: 70px;
+	width: 100%;
+	list-style-type: none;
+	text-align: left;
+	padding: 10px;
+	auto
+	auto
+	auto;
+}
+
+ul li:hover {
+	background-color: #b3c1b8;
+}
+
+ul li span {
+	font-family: 'Poor Story', cursive !important;
+	font-size: 20px;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+input {
+    background-color: beige;
+    border-radius: 8px;
+    border: none;
+    height: 25px;
+    margin: 4px;
+    box-shadow: 1px 1px 6px 0px;
+    text-align: center;
+}
+
+input:hover {
+    background-color: beige;
+    border-radius: 8px;
+    border: none;
+    height: 25px;
+    margin: 4px;
+    box-shadow:inset 1px 1px 6px 0px;
+    text-align: center;
+}
+
+input[type="tel"] {
+    background-color: beige;
+    border-radius: 8px;
+    border: none;
+    height: 25px;
+    margin: 4px;
+    box-shadow: 1px 1px 6px 0px;
+    text-align: center;
+}
+
+input[type="email"] {
+    background-color: beige;
+    border-radius: 8px;
+    border: none;
+    height: 25px;
+    margin: 4px;
+    box-shadow: 1px 1px 6px 0px;
+    text-align: center;
+}
+
+input[type="tel"]:hover {
+    background-color: beige;
+    border-radius: 8px;
+    border: none;
+    height: 25px;
+    margin: 4px;
+    box-shadow:inset 1px 1px 6px 0px;
+    text-align: center;
+}
+
+input[type="email"]:hover {
+    background-color: beige;
+    border-radius: 8px;
+    border: none;
+    height: 25px;
+    margin: 4px;
+    box-shadow:inset 1px 1px 6px 0px;
+    text-align: center;
+}
+
+
+
+
+input[type="radio"] {
+    background-color: beige;
+    border-radius: 999px;
+    border: none; 
+    margin: 4px;
+    height:15px;
+    box-shadow: 1px 1px 6px 0px;
+}
+
+input[type="checkbox"] {
+    background-color: beige;
+    border-radius: 999px;
+    border: none; 
+    margin: 4px;
+    height:15px;
+    box-shadow: 1px 1px 6px 0px;
+}
+
+textarea{
+    background-color: beige;
+    border-radius: 8px;
+    border: none;
+    margin: 4px;
+    box-shadow: 1px 1px 6px 0px;
+    text-align: left;
+    
+}
+
+select{
+    background-color: beige;
+    border-radius: 8px;
+    border: none;
+    margin: 4px;
+    box-shadow: 1px 1px 6px 0px;
+    text-align: left;
+    height: 25px;
+    width:170px;
+    font-size: 18px;
+    font-family: 'Poor Story', cursive !important;
+    
+}
+ 
+input[type="text"]:hover {
+	 text-align: center;
+    background-color: beige;
+    border-radius: 8px;
+    border: none;
+    height: 25px;
+    margin: 4px;
+    box-shadow: inset 1px 1px 6px 0px;
+}
+
+input[type="submit"] {
+    background-color: #CDDC39;
+    border: none;
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+    box-shadow: 1px 1px 8px;
+}
+
+input[type="submit"]:hover {
+    background-color: #CDDC39;
+    border: none;
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+    box-shadow:inset 1px 1px 8px;
+}
+
+table tr td {
+    color: white;
+}
+
+.form {
+	margin: 20px auto 10px 30px;
+	border: solid #8c8c8c;
+	background-color: #858c88;
+	border-radius: 7px;
+}
+</style>
+
+</head>
+<body>
+	<div class="header_alani renk3"></div>
+	<div class="container">
+		<div class="solmenu renk1">
+			<ul>
+				<li class="fas fa-home"><span>HOME</span></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="icerikAlani renk2 ">
+
+			<div class="form">
+				<form action="kullaniciKayit.html"   method="post"   >
+					<table>
+						<tr>
+							<td>Ad:</td>
+							<td><input type="text" name="ad" value=""  required="required"   placeholder="Ad giriniz !" /></td>
+						</tr>
+						<tr>
+							<td>Soyad:</td>
+							<td><input type="text" name="soyad" value=""  required="required" placeholder="Soyad giriniz !" /></td>
+						</tr>
+						<tr>
+							<td>Tel:</td>
+							<td><input type="tel" name="telefon" value="" required="required" placeholder="Telefon girişi yapınız!" /></td>
+						</tr>
+						<tr>
+							<td>Email:</td>
+							<td><input type="email" name="email" value="" required="required" /></td>
+						</tr>
+						<tr>
+							<td>Adres:</td>
+							<td><textarea  name="adres" rows="8" cols="21" required="required" ></textarea></td>
+						</tr>
+						<tr>
+							<td>Cinsiyet:</td>
+							<td>
+							
+							<label  for="cinsiyet"  >Erkek
+							<input type="radio"  id="cinsiyet" name="cinsiyet" value="e"  />
+							</label>
+							
+							<label  for="cinsiyet2"  >Kadın
+							<input type="radio"  id="cinsiyet2" name="cinsiyet" value="k"  checked="checked"/>
+							</label>
+							
+							</td>
+						</tr>
+						<tr>
+							<td>Hobiler:</td>
+							<td>
+							
+							<label  for="aticilik"  >Atıcılık
+							<input type="checkbox"  id="aticilik" name="aticilik" value="aticilik" />
+							</label>
+							
+							<label  for="binicilik"  >Binicilik
+							<input type="checkbox"  id="binicilik" name="binicilik" value="binicilik" />
+							</label>
+							
+							<label  for="yuzme"  >Yüzme
+							<input type="checkbox"  id="yuzme" name="yuzme" value="yuzme" />
+							</label>
+							
+							</td>
+						</tr>
+						<tr>
+						<td>Eğitim Seviyesi:</td>
+						<td>
+						<select  name="egitim"  required="required"  >
+							<option  value=""  >Seçim Yapınız ...</option>
+							<option  value="doc"  >Doktora</option>
+							<option  value="yls"  >Y.Lisans</option>
+							<option  value="ls"  >Lisans</option>
+							<option  value="ols"  >Ön Lisans</option>
+						</select>
+						</td>						
+						</tr>
+						
+						<tr>
+							<td>Site:</td>
+							<td><input type="url" name="site" value="" required="required" /></td>
+						</tr>
+					
+						<tr>
+							<td>D.Tarihi:</td>
+							<td><input type="date" name="dtarihi" value="" required="required" /></td>
+						</tr>
+						
+						<tr>
+							<td>En Sevdiğin Renk:</td>
+							<td><input type="color" name="esr" value="" required="required" /></td>
+						</tr>
+										
+						<tr>
+							<td></td>
+							<td><input type="submit" name="kaydet" value="Kaydet" /></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

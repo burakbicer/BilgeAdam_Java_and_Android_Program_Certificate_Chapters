@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      > 
+
+<h:head></h:head> 
+<body> 
+
+<ui:composition>
+				 
+				<h:form prependId="false"  id="personel_bilgileri"   >
+					<p:growl showDetail="true"   />
+					<p:panelGrid columns="2" styleClass="ui-noborder"  id="personelPanel"  >
+						<p:outputLabel for="per_ad" value="Ad:" />
+						<p:inputText id="per_ad" placeholder="Ad girişi yapınız"
+							required="true" value="#{personelController.ad}"
+							requiredMessage="Lütfen Ad Bilgisini Boş Bırakmayınız" />
+
+						<p:outputLabel for="per_soyad" value="Soyad:" />
+						<p:inputText id="per_soyad" placeholder="Soyad girişi yapınız"
+							required="true" value="#{personelController.soyad}"
+							requiredMessage="Lütfen Soyad Bilgisini Boş Bırakmayınız" />
+
+						<p:outputLabel for="per_tc" value="TC:" />
+						<p:inputNumber id="per_tc" required="true" value="#{personelController.tc}"
+							requiredMessage="Lütfen Tc Bilgisini Boş Bırakmayınız" />
+
+						<p:outputLabel for="per_dtar" value="D.Tarihi:" />
+						<p:calendar id="per_dtar" showOn="button" locale="tr" required="true" />
+
+						<p:outputLabel value="Birim:" />
+						<p:selectOneMenu filter="true" required="true"
+							requiredMessage="Lütfen Birim Seçiniz !"
+							value="#{personelController.secilenBirim}">
+							
+							<f:selectItems value="#{personelController.birimListesi}"
+								itemLabel="#{birim.birimAdi}" itemValue="#{birim.id}"
+								var="birim" />
+
+						</p:selectOneMenu>
+						<p:outputLabel  value="Cinsiyet"  />
+						<p:selectOneRadio value="#{personelController.secilenCinsiyet}" required="true" 
+						requiredMessage="Lütfen cinsiyet seçimi yapınız !"
+						>
+						<f:selectItem  itemLabel="Kadın" itemValue="1" />
+						<f:selectItem  itemLabel="Erkek" itemValue="2" />
+						
+						</p:selectOneRadio>
+						
+						<p:commandButton value="Yeni" action="#{personelController.yeni()}"  ajax="true" update="personel_bilgileri" styleClass="float-right" />
+						
+						<p:commandButton  value="#{personelController.secilenPersonel eq null ? 'Kaydet':'Güncelle'}" action="#{personelController.kaydet()}"  ajax="true" update="personel_bilgileri personel_listesi" process="personel_bilgileri" styleClass="float-right" />
+						
+
+					</p:panelGrid>
+					</h:form>
+					<p:dataTable id="personel_listesi"
+					var="personel"
+					value="#{personelController.personelListesi}"  
+					  rows="10" paginator="true" 
+paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+						rowsPerPageTemplate="5,10,20"
+						selectionMode="single" selection="#{personelController.secilenPersonel}"
+						rowKey="#{personel.id}"
+						>
+					<p:ajax update="personel_bilgileri"  event="rowSelect" listener="#{personelController.satirSec}"      />
+					
+					<p:column  headerText="Id"  >
+						<h:outputText value="#{personel.id}" />
+					</p:column>
+					<p:column  headerText="Ad"  >
+						<h:outputText value="#{personel.ad}" />
+					</p:column>		
+					<p:column  headerText="Soyad"  >
+						<h:outputText value="#{personel.soyad}" />
+					</p:column>
+					<p:column  headerText="Tc"  >
+						<h:outputText value="#{personel.tc}" />
+					</p:column>
+					<p:column   >
+						<p:commandButton value="Sil" immediate="true"  oncomplete="PF('eminmisinSorusu').show()"  >
+							
+							<f:setPropertyActionListener value="#{personel}" target="#{personelController.secilenPersonel}"  />
+					
+						</p:commandButton>
+							
+					</p:column>
+										<p:column   >
+						<p:commandButton value="Veri Ekle" immediate="true"  oncomplete="PF('eminmisinSorusu').show()"  >
+							
+							<f:setPropertyActionListener value="#{personel}" target="#{personelController.secilenPersonel}"  />
+					
+						</p:commandButton>
+							
+					</p:column>
+					</p:dataTable>
+					
+</ui:composition>
+
+</body> 
+</html>

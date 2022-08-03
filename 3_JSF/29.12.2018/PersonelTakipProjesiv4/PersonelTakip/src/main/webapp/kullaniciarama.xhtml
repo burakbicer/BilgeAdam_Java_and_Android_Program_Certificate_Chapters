@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<body>
+	<ui:composition>
+		<div class="ui-grid ui-grid-responsive">
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Ad:" />
+				<p:inputText value="#{aramaController.aramaBilgileri.ad}" />
+				<p:outputLabel value="Soyad:" />
+				<p:inputText  value="#{aramaController.aramaBilgileri.soyad}"   />
+				<p:outputLabel value="Tc:" />
+				<p:inputText  value="#{aramaController.aramaBilgileri.tc}" />
+				<p:spacer />
+				<p:commandButton update="personel_listesi"  value="Ara" action="#{aramaController.ara()}" />
+			</p:panelGrid>
+
+			<p:dataTable id="personel_listesi" var="personel"
+				value="#{aramaController.arananPersoneller}" rows="10"
+				paginator="true" emptyMessage="Veri bulunmamaktadır."
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,20" selectionMode="single"
+				selection="#{aramaController.secilenPersonel}"
+				rowKey="#{personel.id}">
+				 
+				<p:column headerText="Id">
+					<h:outputText value="#{personel.id}" />
+				</p:column>
+				<p:column headerText="Ad">
+					<h:outputText value="#{personel.ad}" />
+				</p:column>
+				<p:column headerText="Soyad">
+					<h:outputText value="#{personel.soyad}" />
+				</p:column>
+				<p:column headerText="Tc">
+					<h:outputText value="#{personel.tc}" />
+				</p:column>
+				<p:column>
+					<p:commandButton  value="Düzenle" action="#{aramaController.personeliDuzenle(personel)}"  >
+										
+					</p:commandButton>
+				</p:column>
+				
+				
+			</p:dataTable>
+		</div>
+	</ui:composition>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15437382030980" configfile="/DinamikJsfWeb/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="sonuc.xhtml" x="348" y="132" id="pf15437454631861" inlinks="pf15437454631862" path="/sonuc.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="96" y="132" id="pf15437454631863" outlinks="pf15437454631862" path="/index.xhtml"/>
+  <links id="pf15437454631862" target="pf15437454631861" source="pf15437454631863" outcome="sonucgoster"/>
+</pageflow:Pageflow>

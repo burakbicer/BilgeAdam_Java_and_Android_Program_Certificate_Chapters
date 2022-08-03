@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	Dışarıda kalan kısım
+	<ui:composition>
+
+		<div>
+			<ul class="list-group">
+			
+				<a href="index.xhtml"><li class="list-group-item #{ secilen_menu eq 'ki' ? 'list-group-item-dark' : '' } "  >Kullanıcı İşlemleri</li></a> 
+				
+				<a href="arama.xhtml"><li class="list-group-item #{ secilen_menu eq 'ar' ? 'list-group-item-dark' : '' }    "  >Arama</li></a>
+				
+				<li class="list-group-item"  ></li>
+				<li class="list-group-item"  ></li>
+				<li class="list-group-item"  ></li>
+
+			</ul>
+
+
+		</div>
+
+
+
+
+
+
+	</ui:composition>
+
+
+</body>
+</html>

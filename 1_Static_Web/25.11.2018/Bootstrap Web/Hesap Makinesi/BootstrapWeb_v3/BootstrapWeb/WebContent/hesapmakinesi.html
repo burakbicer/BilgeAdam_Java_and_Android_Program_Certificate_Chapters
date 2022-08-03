@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hesap Makinesi</title>
+
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
+	
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="resources/js/hesapmakinesi.js"></script>
+<style>
+
+.zemin{
+background-color: #1d1d1d;
+}
+
+.yazialani{
+background-color: #2e2e2e;
+color: #ffffff;
+font-size: 80px;
+border: none;
+height: 200px;
+width: 100%;
+margin-left: 0px;
+margin-right: 0px;
+text-align: right;
+padding-top: 40px; 
+}
+
+.nbutonrengi{
+background-color: #3f3f3f;
+border: none;
+width: 100%;
+height: 63px;
+color: #b2b2b2;
+margin-bottom: 3px;
+margin-left: 0px;
+margin-right: 0px;
+font-size: 25px;
+}
+
+.nbutonrengi_sag{
+background-color: #3f3f3f;
+border: none; 
+height: 63px;
+width: 145px;
+color: #b2b2b2;
+font-size: 25px;
+margin-bottom: 3px;
+margin-left: 0px;
+margin-right: 0px;
+}
+
+
+
+.nbutonrengi_sag_esittir{
+background-color: #458500;
+border: none; 
+height: 63px;
+width: 145px;
+color: #b2b2b2;
+font-size: 25px;
+margin-bottom: 3px;
+margin-left: 0px;
+margin-right: 0px;
+}
+
+
+.nbutonrengi_sag_tekil{
+background-color: #3f3f3f;
+border: none; 
+height: 63px;
+width: 294px;
+color: #b2b2b2;
+font-size: 25px;
+margin-bottom: 3px;
+margin-left: 0px;
+margin-right: 0px;
+}
+
+
+.nbutonrengi_sag_sayi{
+background-color: #3f3f3f;
+border: none; 
+height: 63px;
+width: 145px;
+color: #ffffff;
+font-size: 25px;
+margin-bottom: 3px;
+margin-left: 0px;
+margin-right: 0px;
+}
+
+
+.islecrenkleri{
+background-color: #b2b2b2;
+}
+
+.yazirenkleri{
+background-color: #ffffff;
+}
+
+.sayiyazirenkleri{
+color:#ffffff !important;
+}
+
+.sonucbutonu{
+background-color: #458500;
+}
+
+</style>
+<script type="text/javascript">
+
+function ekranaverigir(veri){
+	var text = document.getElementById("yazialani");
+	text.value = text.value+veri;	
+	
+}
+
+function sonucuygula(){
+	var text = document.getElementById("yazialani");
+	var degisti = text.value.replace(/[x]+/g,"*");
+	
+	var sonuc = eval(degisti);
+	text.value = sonuc;
+	
+}
+
+function temizle(){
+	var text = document.getElementById("yazialani");
+	text.value = "";	
+}
+
+
+
+
+
+</script>
+
+
+
+
+
+
+</head>
+<body>
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+
+				<div class="card" style="min-width: 770px;">
+					<div class="card-header" style="background-color: #ff000014;">
+						Hesap Makinesi</div>
+					<div class="card-body zemin">
+ 						<div  class="row"> 						
+ 							<input type="text" class="yazialani" id="yazialani" />
+ 						</div>
+ 						
+ 						<div class="row" style="margin-top: 30px;" >
+ 						<div  class="col-2">
+ 							<div class="row" >
+ 								<input type="button" class="nbutonrengi" value="M" />
+ 							</div>
+ 							<div class="row" >
+ 								<input type="button" class="nbutonrengi" value="[+/-]" />
+ 							</div>
+ 							<div class="row" >
+ 								<input type="button" class="nbutonrengi" value="sqrt" />
+ 							</div>
+ 							<div class="row" >
+ 								<input type="button" class="nbutonrengi" value="%" />
+ 							</div> 	
+ 							<div class="row" >
+ 								<input type="button" class="nbutonrengi" value="1/x" />
+ 							</div>					 						
+ 						</div> 						
+ 						<div class="col-10"   >
+ 							<div class="row" style="margin-left: 20px;" >
+ 							<input type="button" class="nbutonrengi_sag mr-1" value="CE" />
+ 							<input type="button" onclick="temizle();" class="nbutonrengi_sag mr-1" value="C" />
+ 							<div  class="nbutonrengi_sag mr-1"   style="text-align: center; padding-top: 10px;"   >
+ 								<img  src="resources/images/solaok.png"  />
+ 							</div>
+ 							
+ 							<div  class="nbutonrengi_sag mr-1" onclick="ekranaverigir('/')"  style="text-align: center; padding-top: 10px;"   >
+ 								<img  src="resources/images/bolum.png"  />
+ 							</div>
+ 							
+ 							
+ 							</div>
+ 							<div class="row" style="margin-left: 20px;" >
+ 							
+ 							<input type="button"  onclick="ekranaverigir(7)"  class="nbutonrengi_sag mr-1 sayiyazirenkleri" value="7" />
+ 							<input type="button"  onclick="ekranaverigir(8)" class="nbutonrengi_sag mr-1 sayiyazirenkleri" value="8" />
+ 							<input type="button"  onclick="ekranaverigir(9)"   class="nbutonrengi_sag mr-1 sayiyazirenkleri" value="9" />
+ 							<input type="button"  onclick="ekranaverigir('x')" class="nbutonrengi_sag mr-1 " value="X" />
+ 							
+ 							
+ 							
+ 							
+ 							</div>
+ 							<div class="row"  style="margin-left: 20px;">
+ 							
+ 							<input type="button" onclick="ekranaverigir(4)" class="nbutonrengi_sag mr-1 sayiyazirenkleri" value="4" />
+ 							<input type="button" onclick="ekranaverigir(5)" class="nbutonrengi_sag mr-1 sayiyazirenkleri" value="5" />
+ 							<input type="button" onclick="ekranaverigir(6)" class="nbutonrengi_sag mr-1 sayiyazirenkleri" value="6" />
+ 							<input type="button" onclick="ekranaverigir('-')" class="nbutonrengi_sag mr-1 " style="font-size: 30px; " value="-" />
+ 							
+ 							
+ 							
+ 							
+ 							
+ 							
+ 							</div>
+ 							<div class="row"  style="margin-left: 20px;">
+ 							
+ 							<input type="button" onclick="ekranaverigir(1)" class="nbutonrengi_sag mr-1 sayiyazirenkleri" value="1" />
+ 							<input type="button" onclick="ekranaverigir(2)" class="nbutonrengi_sag mr-1 sayiyazirenkleri" value="2" /> 							
+ 							<input type="button" onclick="ekranaverigir(3)" class="nbutonrengi_sag mr-1 sayiyazirenkleri" value="3" /> 							
+ 							<input type="button" onclick="ekranaverigir('+')" class="nbutonrengi_sag mr-1" style="font-size: 30px;" value="+" />
+ 							
+ 							
+ 							
+ 							</div>
+ 							<div class="row"  style="margin-left: 20px;">
+ 							
+ 							<input type="button" onclick="ekranaverigir(0)" class="nbutonrengi_sag_tekil mr-1 sayiyazirenkleri" value="0" /> 														
+ 							<input type="button" onclick="ekranaverigir(',')" class="nbutonrengi_sag mr-1 sayiyazirenkleri" value="," /> 							
+ 							<input type="button" onclick="sonucuygula();" class="nbutonrengi_sag_esittir mr-1 sayiyazirenkleri" style="font-size: 30px;" value="=" />
+ 							
+ 							
+ 							
+ 							</div>
+ 						</div>
+ 						</div>
+ 						
+					</div>
+				</div>
+
+
+			</div>
+
+
+
+		</div>
+		<div class="col-1"></div>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+Ad:Selçuk 
+ Soyad:uzunsoy
+Tc:2453425 
+ Adres:Ankara
+Cinsiyet:Erkek 
+Hobiler: 
+Binicilik 
+Yüzme 
+Okul Blilgileri: 
+Okul Adý| Bölüm Adý| GPU 
+Ýþ Deneyimleri: 
+Firma Adý | Pozisyon | Giriþ Zamaný | Çýkýþ Zamaný 
+Turksat-YM-01.01.2016-

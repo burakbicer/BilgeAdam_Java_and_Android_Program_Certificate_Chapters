@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: OrnekJsf
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: selcuk
+Implementation-Vendor-Id: com.selcukuzunsoy
+Build-Jdk: 1.8.0_191
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/OrnekJsf
+Created-By: Maven Integration for Eclipse
+
